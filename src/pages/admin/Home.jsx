@@ -1,5 +1,5 @@
 import React from "react";
-import { FaArrowTrendUp, FaClockRotateLeft, FaRegCircleCheck } from "react-icons/fa6";
+import { FaArrowRight, FaArrowTrendUp, FaClockRotateLeft, FaRegCircleCheck } from "react-icons/fa6";
 import {
   FiCheckSquare,
   FiFileText,
@@ -9,24 +9,45 @@ import {
 } from "react-icons/fi";
 import { MdOutlineCancel, MdOutlineErrorOutline } from "react-icons/md";
 import { Link } from "react-router-dom";
-import Bredcumb from "../../components/Bredcumb";
+import Bredcumb from "../../components/Breadcrumb";
 import { CiImport } from "react-icons/ci";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { GiCancel } from "react-icons/gi";
 import { GoGraph } from "react-icons/go";
+
+let ActivitiesCard = ({  title, name, time }) => {
+  return (
+    <div className="flex items-center justify-between bg-[#E8EDFB] p-4 rounded-xl">  
+      <div className="flex items-center gap-4">
+        <span className="bg-[#00C950] w-2 h-2 rounded-full">
+         
+        </span>
+        <div>
+          <p className="text-[#000000] font-medium text-2xl">{title}</p>
+          <p className="text-[#767676]">{name}</p>
+        </div>
+      </div>
+      <div>
+        <p className="text-[#767676]">{time}</p>
+      </div>
+    </div>
+  );
+};
 
 const Home = () => {
   return (
     <div>
       <div className="flex items-center justify-between">
         <div>
-          <Bredcumb />
+         <h3 className="text-[#2D468A] text-3xl whitespace-nowrap">
+        Dashboard Overview
+      </h3>
           <p className="text-[#4A5565] text-sm md:text-base mt-1.5">
             Manage all SOP documents in one place
           </p>
         </div>
 
-        <Link to="/admin/sop/management/upload/sop">
+        <Link to="cv/automation/platform">
           <button className="bg-[#2D468B] text-white px-10 py-2 rounded-md flex items-center gap-2 hover:bg-[#354e92] cursor-pointer">
             <CiImport className="w-8 h-8" />
             Bulk Import
@@ -95,39 +116,49 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="col-span-12  bg-white  p-10 rounded-lg border-2 border-[#E5E7EB]">
-          <div className="flex justify-between  pb-4">
-            <span className="text-xl text-[#0A0A0A]">Subscription Status</span>
-            <span className="text-[#00A63E]">
-              <FaArrowTrendUp />
-            </span>
+        <div className="col-span-12  bg-white  p-5 rounded-lg border-2 border-[#E5E7EB]">
+         <h3 className="text-[#2D468A] text-2xl font-semibold">
+          Recent Automated Activities
+         </h3>
+
+          <div className="mt-6 flex flex-col gap-7">
+           <ActivitiesCard
+             
+              title="CV Quality Check Passed"
+              name="John Smith"
+              time="5 mins ago"
+            />
+
+            <ActivitiesCard
+             
+              title="Availability Confirmed (Email)"
+              name="John Smith"
+              time="5 mins ago"
+            />
+            <ActivitiesCard
+             
+              title="CV Submitted to TechCorp Ltd"
+              name="John Smith"
+              time="5 mins ago"
+            />
+            <ActivitiesCard
+             
+              title="WhatsApp Response Received"
+              name="John Smith"
+              time="5 mins ago"
+            />
+            <ActivitiesCard
+             
+              title="Quality Check Failed"
+              name="John Smith"
+              time="5 mins ago"
+            />
+             
           </div>
 
-          <div className="flex justify-between  py-3">
-            <span className="text-[#4A5565] text-base">Current Plan</span>
-            <span className="font-normal text-base text-[#00A63E] bg-[#DCFCE7] py-1 px-2 rounded">
-              Professional
-            </span>
-          </div>
-
-          <div className="flex justify-between  py-3">
-            <span className="text-[#4A5565] text-base">Employee Count</span>
-            <span className="font-normal text-base text-[#4A5565]">24/50</span>
-          </div>
-
-          <div className="flex justify-between  py-3">
-            <span className="text-[#4A5565] text-base">Next Billing Date</span>
-            <span className="font-normal text-base text-[#4A5565]">
-              February 15,2026
-            </span>
-          </div>
-
-          <div className="border-t border-[#E5E7EB] mt-4 pt-4">
-            <p className="text-[#4A5565] flex items-center gap-2">
-              <MdOutlineErrorOutline />
-              26 employees remaining in your plan
-            </p>
-          </div>
+          <button className="mt-6  text-[#2D468A]  py-3 rounded-lg  flex items-center gap-2 cursor-pointer  font-semibold">
+            View All Activities <FaArrowRight />
+          </button>
         </div>
 
         

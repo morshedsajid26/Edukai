@@ -1,6 +1,6 @@
 import React from "react";
 import { FaArrowLeft } from "react-icons/fa6";
-import Breadcrumb from "../../components/Bredcumb";
+import Breadcrumb from "../../components/Breadcrumb";
 import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
 import InputField from "../../components/InputField";
 import { useNavigate } from "react-router-dom";

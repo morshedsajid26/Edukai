@@ -5,12 +5,12 @@ import AuthLayout from "../layout/AuthLayout";
 
 // admin
 import Home from "../pages/admin/Home";
-import SopManagement from "../pages/admin/SopManagement";
+// import SopManagement from "../pages/admin/BulkImport";
 import UserManagement from "../pages/admin/UserManagement";
 import AddUser from "../pages/admin/AddUser";
-import TaskOversight from "../pages/admin/TaskOversight";
-import AddSOP from "../pages/admin/AddSOP";
-import Messaging from "../pages/admin/Messaging";
+// import TaskOversight from "../pages/admin/TaskOversight";
+// import AddSOP from "../pages/admin/AddSOP";
+// import Messaging from "../pages/admin/Messaging";
 import Settings from "../pages/admin/Settings";
 import Subscription from "../pages/admin/Subscription";
 
@@ -28,6 +28,7 @@ import ResetPassword from "../pages/auth/ResetPassword";
 import NewPassword from "../pages/auth/NewPassword";
 import Success from "../pages/auth/Success";
 import OTP from "../pages/auth/OTP";
+import BulkImport from "../pages/admin/BulkImport";
 
 const router = createBrowserRouter([
   //  AUTH ROUTES
@@ -49,25 +50,25 @@ const router = createBrowserRouter([
     element: <DashboardLayout />,
     children: [
       // admin
-      { path: "dashboard/overview", element: <Home /> },
-      { path: "admin/sop/management", element: <SopManagement /> },
+      { path: "/", element: <Home /> },
+      { path: "cv/automation/platform", element: <BulkImport /> },
       { path: "admin/user/management", element: <UserManagement /> },
       { path: "admin/user/management/add/user", element: <AddUser /> },
       { path: "admin/user/management/edit/user/:id", element: <AddUser /> },
-      { path: "admin/task/oversight", element: <TaskOversight /> },
-      { path: "admin/sop/management/upload/sop", element: <AddSOP /> },
-      { path: "admin/sop/management/edit/sop/:id", element: <AddSOP /> },
-      { path: "admin/messaging/oversight", element: <Messaging /> },
-      { path: "admin/farm/settings", element: <Settings /> },
+      // { path: "admin/task/oversight", element: <TaskOversight /> },
+      // { path: "admin/sop/management/upload/sop", element: <AddSOP /> },
+      // { path: "admin/sop/management/edit/sop/:id", element: <AddSOP /> },
+      // { path: "admin/messaging/oversight", element: <Messaging /> },
+      { path: "settings", element: <Settings /> },
       { path: "admin/subscription/billing", element: <Subscription /> },
 
-      // owner
-      { path: "/", element: <Dashboard /> },
-      { path: "owner/farm/management", element: <FarmManagement /> },
-      { path: "owner/farm/management/details/:id", element: <FarmDetails /> },
-      { path: "owner/farm/management/create/farm", element: <CreateFarm /> },
-      { path: "owner/subscription/plans", element: <SubscriptionPlans /> },
-      { path: "owner/system/settings", element: <SystemSettings /> },
+      // // owner
+      // { path: "/", element: <Dashboard /> },
+      // { path: "owner/farm/management", element: <FarmManagement /> },
+      // { path: "owner/farm/management/details/:id", element: <FarmDetails /> },
+      // { path: "owner/farm/management/create/farm", element: <CreateFarm /> },
+      // { path: "owner/subscription/plans", element: <SubscriptionPlans /> },
+      // { path: "owner/system/settings", element: <SystemSettings /> },
     ],
   },
 ]);

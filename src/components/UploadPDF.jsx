@@ -1,88 +1,79 @@
-import React, { useRef, useState } from "react";
-import { FiUploadCloud } from "react-icons/fi";
+import { useRef, useState } from "react";
+import { FaFilePdf } from "react-icons/fa";
+import { HiOutlineDocumentDownload } from "react-icons/hi";
 
 const UploadPDF = ({ onFileSelect }) => {
   const inputRef = useRef(null);
-  const [dragActive, setDragActive] = useState(false);
-  const [error, setError] = useState("");
+  const [isDragging, setIsDragging] = useState(false);
   const [fileName, setFileName] = useState("");
-
-  const MAX_SIZE = 10 * 1024 * 1024; // 10MB
-
-  const validateFile = (file) => {
-    if (file.type !== "application/pdf") {
-      setError("Only PDF files are allowed");
-      return false;
-    }
-    if (file.size > MAX_SIZE) {
-      setError("File size must be less than 10MB");
-      return false;
-    }
-    setError("");
-    return true;
-  };
 
   const handleFile = (file) => {
     if (!file) return;
-    if (!validateFile(file)) return;
+
+    if (file.type !== "application/pdf") {
+      alert("Only PDF files are allowed");
+      return;
+    }
 
     setFileName(file.name);
-    onFileSelect && onFileSelect(file);
+    onFileSelect?.(file); // optional callback
+  };
+
+  const handleChange = (e) => {
+    const file = e.target.files[0];
+    handleFile(file);
   };
 
   const handleDrop = (e) => {
     e.preventDefault();
-    setDragActive(false);
-    handleFile(e.dataTransfer.files[0]);
-  };
+    setIsDragging(false);
 
-  const handleChange = (e) => {
-    handleFile(e.target.files[0]);
+    const file = e.dataTransfer.files[0];
+    handleFile(file);
   };
 
   return (
-    <div
+    <div className="bg-white p-10">
+      <div
       onDragOver={(e) => {
         e.preventDefault();
-        setDragActive(true);
+        setIsDragging(true);
       }}
-      onDragLeave={() => setDragActive(false)}
+      onDragLeave={() => setIsDragging(false)}
       onDrop={handleDrop}
-      onClick={() => inputRef.current.click()}
-      className={`border-2 border-[#D1D5DC] rounded-lg p-12 text-center cursor-pointer transition
-        ${
-          dragActive
-            ? "border-[#F6A62D] bg-[#FFF4E5]"
-            : "border-[#D1D5DC]"
-        }`}
+      className={`border-2 border-dashed rounded-lg p-10 flex flex-col items-center justify-center gap-2 transition bg-[#F9FAFB]
+        ${isDragging ? "border-[#2D468A] bg-blue-50" : "border-[#A0A0A0]"}`}
     >
-      <FiUploadCloud className="mx-auto text-4xl text-[#6B7280]" />
+      <FaFilePdf className="w-12 h-12 text-[#A0A0A0]" />
 
-      <p className="mt-3 text-[#4A5565]">
-        Click to upload or drag and drop
+      <p className="text-[#4A5565] text-center">
+        {fileName ? fileName : "Drop CVs here or click to browse"}
       </p>
 
-      <p className="text-xs text-[#9CA3AF] mt-1">
-        PDF files only (Max 10MB)
+      <p className="text-[#7C7C7C] text-xs">
+        Support for PDF, DOC, DOCX formats
       </p>
 
-      {fileName && (
-        <p className="mt-3 text-sm text-green-600">
-          Selected file: {fileName}
-        </p>
-      )}
+      <p className="text-[#4A5565] text-center">or</p>
 
-      {error && (
-        <p className="mt-2 text-sm text-red-500">{error}</p>
-      )}
+      <button
+        type="button"
+        onClick={() => inputRef.current.click()}
+        className="bg-[#2D468A] text-white px-10 py-2 rounded-md flex items-center gap-2 hover:bg-[#354e92] cursor-pointer"
+      >
+        <HiOutlineDocumentDownload className="w-6 h-6" />
+        Select a file
+      </button>
 
+      {/* Hidden input */}
       <input
         ref={inputRef}
         type="file"
         accept="application/pdf"
-        hidden
         onChange={handleChange}
+        className="hidden"
       />
+    </div>
     </div>
   );
 };

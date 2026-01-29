@@ -1,5 +1,5 @@
 import React from "react";
-import Breadcrumb from "../../components/Bredcumb";
+import Breadcrumb from "../../components/Breadcrumb";
 import { HiOutlineOfficeBuilding } from "react-icons/hi";
 import { FaArrowTrendDown, FaArrowTrendUp, FaUsers } from "react-icons/fa6";
 import { LiaCheckCircle } from "react-icons/lia";

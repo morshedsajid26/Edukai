@@ -4,6 +4,7 @@ import Image from "../Image";
 import { FaAngleDown } from "react-icons/fa";
 import { useState } from "react";
 import { Icon } from "@iconify/react";
+import { Link } from "react-router-dom";
 
 export default function Header({ onMenuClick }) {
   const [openDropdown, setOpenDropdown] = useState(false);
@@ -50,6 +51,7 @@ export default function Header({ onMenuClick }) {
               {/* <button className="w-full text-left px-4 py-2 hover:bg-gray-100">
                 Profile
               </button> */}
+              <Link to="/settings" onClick={() => setOpenDropdown(false)}>
               <button className="flex w-full items-center gap-3 px-4 py-3 rounded-lg text-[#0A0A0A] hover:bg-[#2D468A] hover:text-white transition cursor-pointer">
                 <Icon
                   icon="material-symbols:settings"
@@ -57,7 +59,8 @@ export default function Header({ onMenuClick }) {
                 />
                 Settings
               </button>
-              <button className="flex w-full items-center gap-3 px-4 py-3 rounded-lg text-[#E7000B] hover:bg-[#2D468A] hover:text-white transition cursor-pointer">
+              </Link>
+              <button onClick={() => setOpenDropdown(false)} className="flex w-full items-center gap-3 px-4 py-3 rounded-lg text-[#E7000B] hover:bg-[#2D468A] hover:text-white transition cursor-pointer">
                 <Icon icon="material-symbols:logout" width="20" />
                 Log Out
               </button>

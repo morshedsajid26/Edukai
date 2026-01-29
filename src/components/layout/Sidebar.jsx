@@ -67,8 +67,8 @@ export default function Sidebar({ isOpen, onClose }) {
 
   
   const navLinks = [
-    { name: "Dashboard", path: "/dashboard/overview", icon: "material-symbols:dashboard-outline" },
-    { name: "Bulk Import", path: "/admin/sop/management", icon: "iconoir:import" },
+    { name: "Dashboard", path: "/", icon: "material-symbols:dashboard-outline" },
+    { name: "Bulk Import", path: "/cv/automation/platform", icon: "iconoir:import" },
     { name: "CV Queue", path: "/admin/user/management", icon: "radix-icons:file-text" },
     { name: "AI Re-writer", path: "/admin/task/oversight", icon: "lineicons:open-ai" },
     { name: "Mail Submission", path: "/admin/messaging/oversight", icon: "hugeicons:sent-02" },

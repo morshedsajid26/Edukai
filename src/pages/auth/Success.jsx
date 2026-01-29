@@ -20,7 +20,7 @@ const Success = () => {
 
      <Link to='/auth/login' className='w-[50%]'>
      
-      <button className='bg-[#F6A62D] text-[#ffffff]  text-xl w-full  py-3 rounded-lg cursor-pointer mt-5'>
+      <button className='bg-[#2D468A] text-[#ffffff]  text-xl w-full  py-3 rounded-lg cursor-pointer mt-5'>
         Log In
       </button>
      </Link> 

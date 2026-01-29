@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { FiUpload, FiTrash2 } from "react-icons/fi";
-import Breadcrumb from '../../components/Bredcumb'
+import Breadcrumb from '../../components/Breadcrumb'
 import UploadImage from "../../components/UploadImage";
 import LanguageSupport from "../../components/LanguageSupport";
 import { LuSave } from "react-icons/lu";

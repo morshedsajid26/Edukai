@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Breadcrumb from "../../components/Bredcumb";
+import Breadcrumb from "../../components/Breadcrumb";
 import { FaPlus } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 import FarmCard from "../../components/FarmCard";

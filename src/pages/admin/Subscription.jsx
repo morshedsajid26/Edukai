@@ -1,5 +1,5 @@
 import React from "react";
-import Breadcrumb from "../../components/Bredcumb";
+import Breadcrumb from "../../components/Breadcrumb";
 import Plan from "../../components/Plan";
 import PlanList from "../../components/PlanList";
 import { BsWallet2 } from "react-icons/bs";

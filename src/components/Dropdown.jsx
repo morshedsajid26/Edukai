@@ -41,7 +41,7 @@ const Dropdown = ({
       className={`flex flex-col gap-2   relative ${className}`}
     >
       {/* Label */}
-      <label className={`font-inter text-[#364153]   ${labelClass}`}>
+      <label className={`font-inter text-[#000000]   ${labelClass}`}>
         {label}
        
       </label>
@@ -52,7 +52,7 @@ const Dropdown = ({
           <input
             readOnly
             value={selected || ""}
-            className={`w-full bg-transparent outline-none text-[#364153] border border-[#D1D5DC] p-4 rounded-lg  placeholder:text-[#0A0A0A]/50    cursor-pointer ${inputClass}`}
+            className={`w-full bg-transparent outline-none text-[#364153]  p-4 rounded-lg  placeholder:text-[#0A0A0A]/50    cursor-pointer ${inputClass}`}
             placeholder={placeholder}
           />
 
@@ -74,7 +74,7 @@ const Dropdown = ({
             <div
               key={index}
               onClick={() => handleSelect(item)}
-              className="py-2 hover:bg-[#F6A62D] hover:text-white cursor-pointer"
+              className="py-2 hover:bg-[#015093] hover:text-white cursor-pointer"
             >
               {item}
             </div>

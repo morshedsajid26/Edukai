@@ -19,7 +19,7 @@ const Password = ({
   return (
     <div className={`flex flex-col gap-2 w-full ${className}`}>
       {label && (
-        <label className={`font-inter text-[#364153]  ${labelClass}`}>
+        <label className={`font-inter text-[#000000]  ${labelClass}`}>
           {label}
         </label>
       )}
@@ -31,7 +31,7 @@ const Password = ({
           value={value}
           onChange={onChange}
           placeholder={placeholder}
-          className={`w-full outline-none p-4 text-[#364153]  font-inter text-[16px] placeholder-[#0A0A0A]/50 border border-[#D1D5DC]  rounded ${inputClass}`}
+          className={`w-full outline-none p-4 text-[#364153]  font-inter text-[16px] placeholder-[#0A0A0A]/50 rounded-lg ${inputClass}`}
           aria-label={label || "password"}
           autoComplete={name === "password" ? "new-password" : "off"}
         />

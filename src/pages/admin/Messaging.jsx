@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import Breadcrumb from "../../components/Bredcumb";
+import Breadcrumb from "../../components/Breadcrumb";
 import { FaSearch } from "react-icons/fa";
 import { FiTrash2 } from "react-icons/fi";
 import { FaTrash } from "react-icons/fa6";

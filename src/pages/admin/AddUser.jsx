@@ -2,7 +2,7 @@ import React from "react";
 import InputField from "../../components/InputField";
 import { FaArrowLeft } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
-import Breadcrumb from "../../components/Bredcumb";
+import Breadcrumb from "../../components/Breadcrumb";
 import Dropdown from "../../components/Dropdown";
 import Password from "../../components/Password";
 

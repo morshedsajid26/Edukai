@@ -1,44 +1,87 @@
 import React from 'react'
-import Breadcrumb from '../../components/Bredcumb'
+import Breadcrumb from '../../components/Breadcrumb'
 import InputField from '../../components/InputField'
 import { HiOutlineOfficeBuilding } from 'react-icons/hi'
 import { LuSave } from 'react-icons/lu'
 import UploadImage from '../../components/UploadImage'
+import Dropdown from '../../components/Dropdown'
+import Password from '../../components/Password'
 
 const Settings = () => {
   return (
     <div>
         <div>
         <Breadcrumb />
-       <p className="text-[#4A5565] text-sm md:text-base mt-1.5">
+       {/* <p className="text-[#4A5565] text-sm md:text-base mt-1.5">
          Configure settings for Farm check
-        </p>
+        </p> */}
       </div>
 
-        <div className="mt-6">
-      <UploadImage label={`Farm Logo`} branding={`Farm`}  />
-
-      </div>
-      <div className='bg-white rounded-lg border-2 border-[#E5E7EB] mt-6 p-6'>
-        <div className='flex items-center mb-4 gap-2'>
-        <HiOutlineOfficeBuilding className='w-6 h-6 text-[#4A5565] ' />
-        <h2 className="text-xl text-[#0A0A0A]  ">Farm Information</h2>
-        </div>
+      <div className='grid grid-cols-12 gap-x-6 gap-y-5 mt-10 '>
         <InputField
-          inputClass={`rounded-lg`}
-          label={`Farm Name`}
-          placeholder={`Enter your farm name`}
+          label="First Name"
+          type="text"
+          placeholder="Your First Name"
+          className="col-span-12 md:col-span-6  "
+          inputClass={`bg-white`}
         />
-        <p className='text-[#6A7282] mt-2'>This name will be displayed throughout the application</p>
+
+         <InputField
+          label="Last Name"
+          type="text"
+          placeholder="Your Last Name"
+          className="col-span-12 md:col-span-6 "
+          inputClass={`bg-white`}
+        />
+
+        <Dropdown
+          label="Gender"
+          placeholder="Select Gender"
+          className="col-span-12 md:col-span-6 "
+          inputClass={`bg-white`}
+          options={["Male", "Female", "Other"]}
+        />
+
+        <Dropdown
+          label="Country"
+          placeholder="Select Country"
+          className="col-span-12 md:col-span-6 "
+          inputClass={`bg-white`}
+          options={["USA", "Canada", "UK", "Australia"]}
+        />
+
+        <Dropdown
+          label="Language"
+          placeholder="Select Language"
+          className="col-span-12 md:col-span-6 "
+          inputClass={`bg-white`}
+          options={["English", "Spanish", "French", "German"]}
+        />
+
+        <Dropdown
+          label="Time Zone"
+          placeholder="Select Time Zone"
+          className="col-span-12 md:col-span-6 "
+          inputClass={`bg-white`}
+          options={["GMT", "EST", "PST", "CST"]}
+        />
+
+        <Password
+          label="Password"
+          placeholder="Enter your password"
+          className="col-span-12 md:col-span-6 "
+          inputClass={`bg-white`}
+        />
+        <Password
+          label="Confirm Password"
+          placeholder="Confirm your password"
+          className="col-span-12 md:col-span-6 "
+          inputClass={`bg-white`}
+        />
+
       </div>
 
-      <div className='flex justify-end'>
-      <button className='bg-[#F6A62D] text-white px-6 py-3 rounded-lg mt-9  flex items-center gap-2 hover:bg-[#e5942b] cursor-pointer '>
-        <LuSave className='w-6 h-6 ' />
-        Save Changes
-      </button>
-
-      </div>
+      
 
       
     </div>

@@ -10,8 +10,8 @@ const NewPassword = () => {
     <main className="bg-white grid justify-center items-center overflow-y-auto hide-scrollbar py-10 md:px-11 px-12  rounded-3xl  ">
       <form className="gap-5 flex flex-col items-center md:w-[450px] w-full ">
 
-        <Image src="/authLogo.png" alt="logo" />
-        <h3 className="font-inter font-medium text-[32px] text-[#333333] ">
+        <h3 className="text-[#2D468A] font-semibold text-4xl">Edukai</h3>
+        <h3 className="font-inter font-medium text-[32px] text-[#2D468A] ">
           Set a new Password
         </h3>
 
@@ -23,13 +23,13 @@ const NewPassword = () => {
         
         <Password
           label="New Password"
-          inputClass={`rounded-lg`}
+          inputClass={`rounded-lg border border-[#2D468A]`}
           // placeholder="Enter your password"
         />
 
         <Password
           label="Confirm Password"
-          inputClass={`rounded-lg`}
+          inputClass={`rounded-lg border border-[#2D468A]`}
           // placeholder="Enter your password"
         />
 
@@ -38,7 +38,7 @@ const NewPassword = () => {
        
 
         <Link className="w-full" to="/auth/success">
-          <button className="bg-[#F6A62D] text-[#ffffff]  w-full py-3 rounded-lg cursor-pointer mt-12">
+          <button className="bg-[#2D468A] text-[#ffffff]  w-full py-3 rounded-lg cursor-pointer mt-12">
          Reset Password
           </button>
         </Link>

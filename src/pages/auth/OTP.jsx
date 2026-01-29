@@ -11,7 +11,7 @@ const handleChange = (e, index) => {
   const value = e.target.value.replace(/[^0-9]/g, "");
 
   const newOtp = [...otp];
-  newOtp[index] = value;   // empty হলেও সেট হবে
+  newOtp[index] = value;   
   setOtp(newOtp);
 
   if (value && index < 5) {
@@ -29,8 +29,8 @@ const handleChange = (e, index) => {
   return (
     <main className="bg-white grid justify-center items-center overflow-y-auto hide-scrollbar py-10 md:px-11 px-12  rounded-3xl  ">
       <form className="gap-5 flex flex-col items-center md:w-[450px] w-full ">
-        <Image src="/authLogo.png" alt="logo" />
-        <h3 className="font-inter font-medium text-[32px] text-[#333333] ">
+        <h3 className="text-[#2D468A] font-semibold text-4xl">Edukai</h3>
+        <h3 className="font-inter font-medium text-[32px] text-[#2D468A] ">
           Enter your OTP
         </h3>
 
@@ -50,13 +50,13 @@ const handleChange = (e, index) => {
               onChange={(e) => handleChange(e, i)}
               onKeyDown={(e) => handleKeyDown(e, i)}
               value={otp[i]}
-              className="appearance-none w-[47px] h-[49px] border border-[#F6A62D] rounded-[10px] text-center outline-none text-xl font-inter font-bold text-[#F6A62D] "
+              className="appearance-none w-[47px] h-[49px] border border-[#2D468A] rounded-[10px] text-center outline-none text-xl font-inter font-bold text-[#2D468A] "
             />
           ))}
         </div>
 
         <Link className="w-full" to="/auth/new/password">
-          <button className="bg-[#F6A62D] text-[#ffffff]  w-full py-3 rounded-lg cursor-pointer mt-12">
+          <button className="bg-[#2D468A] text-[#ffffff]  w-full py-3 rounded-lg cursor-pointer mt-12">
             Verify
           </button>
         </Link>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Breadcrumb from "../../components/Bredcumb";
+import Breadcrumb from "../../components/Breadcrumb";
 import { Link } from "react-router-dom";
 
 import { FaPlus } from "react-icons/fa6";
